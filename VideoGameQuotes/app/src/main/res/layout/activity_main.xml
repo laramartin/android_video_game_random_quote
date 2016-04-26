@@ -14,9 +14,10 @@
     <ImageView
         android:id="@+id/arcade_imageview"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
         android:scaleType="fitXY"
-        android:src="@drawable/arcade_machine3" />
+        android:src="@drawable/arcade_machine3"
+        android:layout_above="@+id/linearLayout"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/quote_textView"
@@ -54,9 +55,11 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/arcade_imageview"
-        android:id="@+id/linearLayout">
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentBottom="true">
 
         <Button
             android:layout_width="0dp"
@@ -66,7 +69,6 @@
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/quote_textView"
             android:layout_alignEnd="@+id/quote_textView"
-            android:layout_marginTop="16dp"
             android:text="new quote"
             android:backgroundTint="@color/accent"  />
 
@@ -78,7 +80,6 @@
             android:layout_alignTop="@+id/share_button"
             android:layout_alignLeft="@+id/quote_textView"
             android:layout_alignStart="@+id/quote_textView"
-            android:layout_marginTop="16dp"
             android:drawableLeft="@android:drawable/ic_menu_share"
             android:text="share"
             android:backgroundTint="@color/accent"/>
