@@ -61,25 +61,27 @@
             android:layout_width="0dp"
             android:layout_height="64dp"
             android:layout_weight="1"
-            android:id="@+id/share"
+            android:id="@+id/new_quote"
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/quote"
             android:layout_alignEnd="@+id/quote"
             android:text="new quote"
             android:backgroundTint="@color/accent"
-            android:onClick="newQuote"/>
+            android:onClick="newQuote"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
 
-        <Button
-            android:id="@+id/generate_quote"
-            android:layout_width="0dp"
-            android:layout_height="64dp"
-            android:layout_weight="1"
-            android:layout_alignTop="@+id/share"
-            android:layout_alignLeft="@+id/quote"
-            android:layout_alignStart="@+id/quote"
-            android:drawableLeft="@android:drawable/ic_menu_share"
-            android:text="share"
-            android:backgroundTint="@color/accent"/>
+        <!--<Button-->
+            <!--android:id="@+id/generate_quote"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="64dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_alignTop="@+id/share"-->
+            <!--android:layout_alignLeft="@+id/quote"-->
+            <!--android:layout_alignStart="@+id/quote"-->
+            <!--android:drawableLeft="@android:drawable/ic_menu_share"-->
+            <!--android:text="share"-->
+            <!--android:backgroundTint="@color/accent"/>-->
     </LinearLayout>
 
 

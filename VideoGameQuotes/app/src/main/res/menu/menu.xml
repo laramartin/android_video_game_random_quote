@@ -7,5 +7,7 @@
         android:id="@+id/menu_item_share"
         VideoGameQuotes:showAsAction="always"
         android:title="Share"
+        android:icon="@android:drawable/ic_menu_share"
+        android:
         android:actionProviderClass="android.support.v7.widget.ShareActionProvider"    />
 </menu>
