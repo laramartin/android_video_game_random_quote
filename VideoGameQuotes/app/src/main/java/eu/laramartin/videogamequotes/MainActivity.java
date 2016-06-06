@@ -5,9 +5,11 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.drawable.Icon;
 import android.os.Build;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ShareActionProvider;
+import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,28 +43,32 @@ public class MainActivity extends AppCompatActivity {
         videoGameTextView.setText("\uD83C\uDFAE Katamari Damacy");
     }
 
-//    private ShareActionProvider mShareActionProvider;
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate menu resource file.
         getMenuInflater().inflate(R.menu.menu, menu);
-
-//        // Locate MenuItem with ShareActionProvider
-//        MenuItem item = menu.findItem(R.id.menu_item_share);
-//
-//        // Fetch and store ShareActionProvider
-//        mShareActionProvider = (ShareActionProvider) item.getActionProvider();
-
         // Return true to display menu
         return true;
     }
 
-//    // Call to update the share intent
-//    private void setShareIntent(Intent shareIntent) {
-//        if (mShareActionProvider != null) {
-//            mShareActionProvider.setShareIntent(shareIntent);
-//        }
-//    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_item_share:
+                share();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void share() {
+        String shareBody = "Here is the share content body";
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Game quote");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        startActivity(Intent.createChooser(sharingIntent, "share with"));
+    }
 }
 
