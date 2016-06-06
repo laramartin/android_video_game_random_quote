@@ -77,8 +77,8 @@
             <!--android:layout_height="64dp"-->
             <!--android:layout_weight="1"-->
             <!--android:layout_alignTop="@+id/share"-->
-            <!--android:layout_alignLeft="@+id/quote"-->
-            <!--android:layout_alignStart="@+id/quote"-->
+            <!--android:layout_alignLeft="@+id/Quote"-->
+            <!--android:layout_alignStart="@+id/Quote"-->
             <!--android:drawableLeft="@android:drawable/ic_menu_share"-->
             <!--android:text="share"-->
             <!--android:backgroundTint="@color/accent"/>-->
