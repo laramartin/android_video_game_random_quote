@@ -3,7 +3,6 @@ package eu.laramartin.videogamequotes;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.content.Intent;
-import android.graphics.drawable.Icon;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -75,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
             "Zero Wing"
             );
 
-
     List<Quote> listOfQuotes = new ArrayList<>();
 
     public void fillArray(){
@@ -114,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ImageButton sharingButton = new ImageButton(this);
         sharingButton.setLayoutParams(new ViewGroup.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT));
-        sharingButton.setImageIcon(Icon.createWithContentUri("@android:drawable/ic_menu_share"));
+        sharingButton.setImageDrawable(getDrawable(R.drawable.ic_share_black_24dp));
         fillArray();
     }
 
@@ -125,9 +123,6 @@ public class MainActivity extends AppCompatActivity {
         TextView quoteTextView = (TextView) findViewById(R.id.quote);
         TextView authorTextView = (TextView) findViewById(R.id.author);
         TextView videoGameTextView = (TextView) findViewById(R.id.video_game);
-//        quoteTextView.setText(katamari.phrase);
-//        authorTextView.setText(katamari.author);
-//        videoGameTextView.setText("\uD83C\uDFAE " + katamari.game);
         quoteTextView.setText(actualQuote.phrase);
         authorTextView.setText("-- " + actualQuote.author);
         videoGameTextView.setText("\uD83C\uDFAE " + actualQuote.game);
