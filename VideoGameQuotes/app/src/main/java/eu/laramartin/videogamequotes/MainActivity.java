@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton sharingButton = new ImageButton(this);
         sharingButton.setLayoutParams(new ViewGroup.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT));
         sharingButton.setImageDrawable(getDrawable(R.drawable.ic_share_black_24dp));
+        sharingButton.setImageDrawable(getDrawable(R.drawable.ic_info_black_24dp));
         fillArray();
     }
 
