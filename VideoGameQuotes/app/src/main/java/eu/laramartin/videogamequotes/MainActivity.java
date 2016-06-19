@@ -5,11 +5,8 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.drawable.Icon;
 import android.os.Build;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.ShareActionProvider;
-import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +15,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -79,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             "Zero Wing"
             );
 
+
     List<Quote> listOfQuotes = new ArrayList<>();
 
     public void fillArray(){
@@ -105,7 +102,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    private Quote getQuote(){
+        Quote actualQuote = listOfQuotes.get(randomNumber());
+        return actualQuote;
+    }
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -121,13 +121,13 @@ public class MainActivity extends AppCompatActivity {
 //    this method is called when "new Quote" button is clicked
 
     public void newQuote(View view) {
+        Quote actualQuote = getQuote();
         TextView quoteTextView = (TextView) findViewById(R.id.quote);
         TextView authorTextView = (TextView) findViewById(R.id.author);
         TextView videoGameTextView = (TextView) findViewById(R.id.video_game);
 //        quoteTextView.setText(katamari.phrase);
 //        authorTextView.setText(katamari.author);
 //        videoGameTextView.setText("\uD83C\uDFAE " + katamari.game);
-        Quote actualQuote = listOfQuotes.get(randomNumber());
         quoteTextView.setText(actualQuote.phrase);
         authorTextView.setText("-- " + actualQuote.author);
         videoGameTextView.setText("\uD83C\uDFAE " + actualQuote.game);
@@ -153,7 +153,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void share() {
-        String shareBody = "Here is the share content body";
+        Quote actualQuote = listOfQuotes.get(lastRandomNum);
+        String shareBody = "\"" + actualQuote.phrase + "\"" +
+                "\n-- " + actualQuote.author +
+                "\n" + "\uD83C\uDFAE " + actualQuote.game;
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");
         sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Game Quote");

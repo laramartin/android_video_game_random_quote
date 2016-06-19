@@ -17,7 +17,7 @@
 
     <TextView
         android:id="@+id/quote"
-        android:text="Thank you Mario! But our Princess is in another castle!"
+        android:text="@string/welcome_phrase"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:textSize="20sp"
@@ -33,7 +33,7 @@
         android:id="@+id/author"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:text="-- Toad"
+        android:text="aaaaaaaaaaaaaaaaaaaaa"
         android:layout_alignBottom="@+id/quote"
         android:layout_alignLeft="@+id/quote"
         android:layout_alignStart="@+id/quote" />
@@ -42,7 +42,7 @@
         android:id="@+id/video_game"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:text="🎮 Super Mario Bros."
+        android:text="vvvvvvvvvvvvvvv"
         android:layout_below="@+id/author"
         android:layout_centerHorizontal="true" />
 
@@ -65,23 +65,11 @@
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/quote"
             android:layout_alignEnd="@+id/quote"
-            android:text="new quote"
+            android:text="@string/new_quote_button"
             android:backgroundTint="@color/accent"
             android:onClick="newQuote"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"/>
-
-        <!--<Button-->
-            <!--android:id="@+id/generate_quote"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="64dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:layout_alignTop="@+id/share"-->
-            <!--android:layout_alignLeft="@+id/Quote"-->
-            <!--android:layout_alignStart="@+id/Quote"-->
-            <!--android:drawableLeft="@android:drawable/ic_menu_share"-->
-            <!--android:text="share"-->
-            <!--android:backgroundTint="@color/accent"/>-->
     </LinearLayout>
 
 
