@@ -16,16 +16,96 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import java.util.ArrayList;
 
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    int lastRandomNum = 0;
+
     Quote katamari = new Quote(
             "We are moved to tears by the size of this thing.",
-            "-- King of All Cosmos",
+            "King of All Cosmos",
             "Katamari Damacy");
+
+    Quote lastOfUs = new Quote(
+            "Endure and survive.",
+            "Ellie",
+            "The Last of Us");
+
+    Quote borderlands2 = new Quote(
+            "Nothing is more badass than treating a woman with respect.",
+            "Mr. Torgue",
+            "Borderlands 2"
+            );
+
+    Quote mgs = new Quote(
+            "It's easy to forget what a sin is in the middle of a battlefield.",
+            "Solid Snake",
+            "Metal Gear Solid"
+            );
+
+    Quote marioBross = new Quote(
+            "Thank you Mario! But our Princess is in another castle!",
+            "Toad",
+            "Super Mario Bros."
+            );
+
+    Quote guildWars2 = new Quote(
+            "Knowledge is useless if it is not used.",
+            "Gixx",
+            "Guild Wars 2"
+            );
+
+    Quote persona4 = new Quote(
+            "Working for a better tomorrow isn't just one-time thing. The tomorrows keep coming.",
+            "Yu Narukami",
+            "Persona 4"
+            );
+
+    Quote danganronpa2 = new Quote(
+            "Belive in yourself... If you don't have that... it doesn't matter how many talents you have, you still won't be able to hold your head up high...",
+            "Chiaki",
+            "Danganronpa 2"
+            );
+
+    Quote zeroWing = new Quote(
+            "All your base are belong to us",
+            "Cats",
+            "Zero Wing"
+            );
+
+    List<Quote> listOfQuotes = new ArrayList<>();
+
+    public void fillArray(){
+        listOfQuotes.add(katamari);
+        listOfQuotes.add(lastOfUs);
+        listOfQuotes.add(borderlands2);
+        listOfQuotes.add(mgs);
+        listOfQuotes.add(marioBross);
+        listOfQuotes.add(guildWars2);
+        listOfQuotes.add(persona4);
+        listOfQuotes.add(danganronpa2);
+        listOfQuotes.add(zeroWing);
+    }
+
+    private int randomNumber(){
+        Random r = new Random();
+        int length = listOfQuotes.size();
+        int num = r.nextInt(length - 1) + 1;
+        if (num != lastRandomNum){
+            lastRandomNum = num;
+            return num;
+        } else {
+            return randomNumber();
+        }
+    }
+
+
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -35,8 +115,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton sharingButton = new ImageButton(this);
         sharingButton.setLayoutParams(new ViewGroup.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT));
         sharingButton.setImageIcon(Icon.createWithContentUri("@android:drawable/ic_menu_share"));
-
-
+        fillArray();
     }
 
 //    this method is called when "new Quote" button is clicked
@@ -45,9 +124,13 @@ public class MainActivity extends AppCompatActivity {
         TextView quoteTextView = (TextView) findViewById(R.id.quote);
         TextView authorTextView = (TextView) findViewById(R.id.author);
         TextView videoGameTextView = (TextView) findViewById(R.id.video_game);
-        quoteTextView.setText(katamari.phrase);
-        authorTextView.setText(katamari.author);
-        videoGameTextView.setText("\uD83C\uDFAE " + katamari.game);
+//        quoteTextView.setText(katamari.phrase);
+//        authorTextView.setText(katamari.author);
+//        videoGameTextView.setText("\uD83C\uDFAE " + katamari.game);
+        Quote actualQuote = listOfQuotes.get(randomNumber());
+        quoteTextView.setText(actualQuote.phrase);
+        authorTextView.setText("-- " + actualQuote.author);
+        videoGameTextView.setText("\uD83C\uDFAE " + actualQuote.game);
     }
 
     @Override
