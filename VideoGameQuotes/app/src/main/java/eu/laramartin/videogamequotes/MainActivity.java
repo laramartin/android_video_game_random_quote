@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Build;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton sharingButton = new ImageButton(this);
         sharingButton.setLayoutParams(new ViewGroup.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT));
         sharingButton.setImageDrawable(getDrawable(R.drawable.ic_share_black_24dp));
-        sharingButton.setImageDrawable(getDrawable(R.drawable.ic_info_black_24dp));
+        sharingButton.setImageDrawable(getDrawable(R.drawable.ic_info_white_24dp));
         fillArray();
     }
 
@@ -143,6 +144,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_item_share:
                 share();
                 return true;
+            case R.id.menu_item_info:
+                infoAboutMe();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -158,6 +162,15 @@ public class MainActivity extends AppCompatActivity {
         sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Game Quote");
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
         startActivity(Intent.createChooser(sharingIntent, "share with"));
+    }
+
+    private void infoAboutMe(){
+        new AlertDialog.Builder(this)
+                .setTitle("About Me")
+                .setMessage("This application has been developed by Lara Martin.")
+                .setIcon(R.drawable.ic_error_black_24dp)
+                .show();
+
     }
 }
 
