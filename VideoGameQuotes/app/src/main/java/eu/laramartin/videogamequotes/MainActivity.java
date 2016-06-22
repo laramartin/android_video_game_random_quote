@@ -106,15 +106,15 @@ public class MainActivity extends AppCompatActivity {
         return actualQuote;
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
+    //@TargetApi(Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ImageButton sharingButton = new ImageButton(this);
         sharingButton.setLayoutParams(new ViewGroup.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT));
-        sharingButton.setImageDrawable(getDrawable(R.drawable.ic_share_black_24dp));
-        sharingButton.setImageDrawable(getDrawable(R.drawable.ic_info_white_24dp));
+        sharingButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_share_black_24dp));
+        sharingButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_info_white_24dp));
         fillArray();
     }
 
