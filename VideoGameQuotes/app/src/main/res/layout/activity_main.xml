@@ -50,10 +50,10 @@
                     android:text="@string/welcome_phrase"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.66"
                     android:textSize="20sp"
                     android:background="@android:color/white"
-                />
+                    android:textIsSelectable="true"/>
 
                 <TextView
                     android:id="@+id/author"
@@ -63,14 +63,16 @@
                     android:text=""
                     android:layout_alignBottom="@+id/quote"
                     android:layout_alignLeft="@+id/quote"
-                    android:layout_alignStart="@+id/quote" />
+                    android:layout_alignStart="@+id/quote"
+                    android:textIsSelectable="true"/>
 
                 <TextView
                     android:id="@+id/video_game"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.15"
-                    android:text=""/>
+                    android:layout_weight="0.13"
+                    android:text=""
+                    android:textIsSelectable="true"/>
             </LinearLayout>
 
             <TextView
@@ -83,7 +85,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.25"/>
+            android:layout_weight="0.26"/>
 
         <Button
             android:layout_width="match_parent"
