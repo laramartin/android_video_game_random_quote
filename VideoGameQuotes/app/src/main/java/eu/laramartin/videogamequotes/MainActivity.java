@@ -51,9 +51,21 @@ public class MainActivity extends AppCompatActivity {
 
         GameQuotes.initQuotes(listOfQuotes);
         Log.v("mainactivity", "quotes list: " + listOfQuotes.size());
+        getNewQuote();
     }
 
     public void newQuote(View view) {
+//        Quote actualQuote = getQuote();
+//        TextView quoteTextView = (TextView) findViewById(R.id.quote);
+//        TextView authorTextView = (TextView) findViewById(R.id.author);
+//        TextView videoGameTextView = (TextView) findViewById(R.id.video_game);
+//        quoteTextView.setText(actualQuote.phrase);
+//        authorTextView.setText("-- " + actualQuote.author);
+//        videoGameTextView.setText("\uD83C\uDFAE " + actualQuote.game);
+        getNewQuote();
+    }
+
+    private void getNewQuote(){
         Quote actualQuote = getQuote();
         TextView quoteTextView = (TextView) findViewById(R.id.quote);
         TextView authorTextView = (TextView) findViewById(R.id.author);
