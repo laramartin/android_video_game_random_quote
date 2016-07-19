@@ -32,9 +32,9 @@
         android:layout_marginTop="16dp"/>
 
     <ImageView
-        android:layout_width="40dp"
-        android:layout_height="60dp"
-        android:src="@drawable/lara_nolips"
-        android:layout_marginTop="16dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/lara_logo"
+        android:layout_marginTop="8dp"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>
