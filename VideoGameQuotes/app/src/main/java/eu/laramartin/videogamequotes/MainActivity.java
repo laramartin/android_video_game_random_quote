@@ -6,6 +6,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -110,11 +111,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void infoAboutMe(){
-        new AlertDialog.Builder(this)
-                .setTitle("About Me")
-                .setMessage("This application has been developed by Lara Martin.")
-                .setIcon(R.drawable.ic_error_black_24dp)
-                .show();
+//        new AlertDialog.Builder(this)
+//                .setTitle("About Me")
+//                .setMessage("This application has been developed by Lara Martin.")
+//                .setIcon(R.drawable.ic_error_black_24dp)
+//                .show();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        // Get the layout inflater
+        LayoutInflater inflater = this.getLayoutInflater();
+
+        // Inflate and set the layout for the dialog
+        // Pass null as the parent view because its going in the dialog layout
+        builder.setView(inflater.inflate(R.layout.info_dialog  , null));
+
+        builder.create();
+
+        builder.show();
+
     }
 }
 
