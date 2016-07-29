@@ -37,4 +37,5 @@
         android:src="@drawable/lara_logo"
         android:layout_marginTop="8dp"
         android:layout_gravity="center_horizontal" />
+
 </LinearLayout>

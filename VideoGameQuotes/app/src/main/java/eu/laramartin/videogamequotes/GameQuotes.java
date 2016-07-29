@@ -53,12 +53,12 @@ public class GameQuotes {
                 "Danganronpa 2"));
 
         list.add(new Quote(
-                "All your base are belong to us",
+                "All your base are belong to us.",
                 "Cats",
                 "Zero Wing"));
 
         list.add(new Quote(
-                "It's me, Mario",
+                "It's me, Mario!",
                 "Mario",
                 "Super Mario 64"));
 

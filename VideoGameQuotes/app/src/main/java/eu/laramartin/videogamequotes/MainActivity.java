@@ -56,13 +56,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void newQuote(View view) {
-//        Quote actualQuote = getQuote();
-//        TextView quoteTextView = (TextView) findViewById(R.id.quote);
-//        TextView authorTextView = (TextView) findViewById(R.id.author);
-//        TextView videoGameTextView = (TextView) findViewById(R.id.video_game);
-//        quoteTextView.setText(actualQuote.phrase);
-//        authorTextView.setText("-- " + actualQuote.author);
-//        videoGameTextView.setText("\uD83C\uDFAE " + actualQuote.game);
         getNewQuote();
     }
 
@@ -78,9 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate menu resource file.
         getMenuInflater().inflate(R.menu.menu, menu);
-        // Return true to display menu
         return true;
     }
 
@@ -111,24 +102,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void infoAboutMe(){
-//        new AlertDialog.Builder(this)
-//                .setTitle("About Me")
-//                .setMessage("This application has been developed by Lara Martin.")
-//                .setIcon(R.drawable.ic_error_black_24dp)
-//                .show();
-
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        // Get the layout inflater
         LayoutInflater inflater = this.getLayoutInflater();
-
-        // Inflate and set the layout for the dialog
-        // Pass null as the parent view because its going in the dialog layout
         builder.setView(inflater.inflate(R.layout.info_dialog  , null));
-
         builder.create();
-
         builder.show();
-
     }
 }
 

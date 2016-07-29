@@ -15,6 +15,5 @@
         VideoGameQuotes:showAsAction="always"
         android:title="Info"
         android:icon="@drawable/ic_info_white_24dp"
-
         />
 </menu>
