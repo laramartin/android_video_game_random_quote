@@ -1,6 +1,5 @@
 package eu.laramartin.videogamequotes;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +9,6 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +18,9 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     int lastRandomNum = 0;
+    TextView quoteTextView;
+    TextView authorTextView;
+    TextView videoGameTextView;
 
     List<Quote> listOfQuotes = new ArrayList<>();
 
@@ -37,19 +37,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Quote getQuote(){
-        Quote actualQuote = listOfQuotes.get(randomNumber());
-        return actualQuote;
+        return listOfQuotes.get(randomNumber());
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImageButton sharingButton = new ImageButton(this);
-        sharingButton.setLayoutParams(new ViewGroup.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT));
-        sharingButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_share_black_24dp));
-        sharingButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_info_white_24dp));
-
+        quoteTextView = (TextView) findViewById(R.id.quote);
+        authorTextView = (TextView) findViewById(R.id.author);
+        videoGameTextView = (TextView) findViewById(R.id.video_game);
         GameQuotes.initQuotes(listOfQuotes);
         Log.v("mainactivity", "quotes list: " + listOfQuotes.size());
         getNewQuote();
@@ -61,9 +58,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void getNewQuote(){
         Quote actualQuote = getQuote();
-        TextView quoteTextView = (TextView) findViewById(R.id.quote);
-        TextView authorTextView = (TextView) findViewById(R.id.author);
-        TextView videoGameTextView = (TextView) findViewById(R.id.video_game);
         quoteTextView.setText(actualQuote.phrase);
         authorTextView.setText("-- " + actualQuote.author);
         videoGameTextView.setText("\uD83C\uDFAE " + actualQuote.game);
@@ -104,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
     private void infoAboutMe(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         LayoutInflater inflater = this.getLayoutInflater();
-        builder.setView(inflater.inflate(R.layout.info_dialog  , null));
+        builder.setView(inflater.inflate(R.layout.info_dialog, null));
         builder.create();
         builder.show();
     }
