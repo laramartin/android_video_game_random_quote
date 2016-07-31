@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         authorTextView = (TextView) findViewById(R.id.author);
         videoGameTextView = (TextView) findViewById(R.id.video_game);
         GameQuotes.initQuotes(listOfQuotes);
-        Log.v("mainactivity", "quotes list: " + listOfQuotes.size());
         getNewQuote();
     }
 
