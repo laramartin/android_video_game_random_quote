@@ -73,7 +73,7 @@ public class GameQuotes {
                 "Pro Wrestling"));
 
         list.add(new Quote(
-                "At the end of the experiment, you will be baked and then there will be cake.",
+                "The cake is a lie.",
                 "GLaDOS",
                 "Portal"));
 
