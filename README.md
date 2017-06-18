@@ -17,5 +17,4 @@
 
 ## Screenshots
 
-<img src="https://raw.githubusercontent.com/laramartin/android_video_game_random_quote/master/screenshots/screenshot01.png" width="300"/>
-<img src="https://raw.githubusercontent.com/laramartin/android_video_game_random_quote/master/screenshots/screenshot02.png" width="300"/>
+<img src="https://raw.githubusercontent.com/laramartin/android_video_game_random_quote/master/screenshots/screenshot01.png" width="300"/><img src="https://raw.githubusercontent.com/laramartin/android_video_game_random_quote/master/screenshots/screenshot02.png" width="300"/>
